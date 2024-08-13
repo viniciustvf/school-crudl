@@ -1,0 +1,60 @@
+.p-datatable {
+    width: 100%;
+  }
+  
+  .p-datatable th, .p-datatable td {
+    padding: 10px;
+  }
+  
+  .p-datatable th {
+    background-color: #f1f1f1;
+  }
+  
+  .p-datatable-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .p-datatable-table th,
+  .p-datatable-table td {
+    border: 1px solid #ddd;
+  }
+  
+  .p-datatable-gridlines .p-datatable-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .p-datatable-striped .p-datatable-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+
+  .col-name {
+    width: 20%;
+  }
+  
+  .col-vacancies {
+    width: 20%;
+  }
+  
+  .col-init {
+    width: 20%;
+  }
+  
+  .col-end {
+    width: 20%;
+  }
+  
+  .col-actions {
+    width: 20%;
+    text-align: center;
+  }
+  
+  .p-datatable th, .p-datatable td {
+    padding: 10px;
+  }
+  
+  .p-datatable th {
+    background-color: #f1f1f1;
+  }
+  
+  

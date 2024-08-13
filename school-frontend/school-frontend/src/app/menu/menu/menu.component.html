@@ -1,0 +1,21 @@
+@if (showMenu) {
+<div class="container">
+    <div>
+        <img src="ifsclogo.png" alt="IFSC" height="40px" class="justify-content-start"/>
+    </div>
+    <div class="container-end">
+        <div>
+            <p-button type="button" label="Pessoa" routerLink="/person" severity="success" [text]="true"></p-button>
+        </div>
+        <div>
+            <p-button type="button" label="Curso" routerLink="/course" severity="success" [text]="true"></p-button>
+        </div>
+        <div>
+            <p-button type="button" label="Matrícula" routerLink="/registration" severity="success" [text]="true"></p-button>
+        </div>
+        <div>
+            <p-button type="button" label="Home" routerLink="/" severity="success" [text]="true"></p-button>
+        </div>
+    </div>
+</div>
+}

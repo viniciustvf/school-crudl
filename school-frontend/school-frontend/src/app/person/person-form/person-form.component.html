@@ -1,0 +1,38 @@
+
+<p-card class="mb-2">
+    <div class="container p-fluid">
+        <form #form="ngForm" class="ui-g">
+            <div class="flex justify-content-between gap-2">
+                <div class="w-6 flex flex-column">
+                    <label for="txtName" class="font-bold">Nome</label>
+                        <input 
+                            ngModel 
+                            pInputText 
+                            type="text" 
+                            id="txtName" 
+                            name="txtName" 
+                            placeholder="Name" 
+                            class="" 
+                            (input)="capitalizeWords(form)"
+                            required
+                        >
+                </div>
+                <div class="w-6 flex flex-column">
+                    <label for="txtCpf" class="font-bold">CPF</label>
+                    <input ngModel pInputText type="text" id="txtCpf" name="txtCpf" placeholder="CPF" class="" mask="000.000.000-00" required>
+                </div>
+            </div>
+            <div class="flex justify-content-between mt-2 gap-2">
+                <div class="w-6 flex flex-column">
+                    <label for="txtBirthDate" class="font-bold">Data de nascimento</label>
+                    <p-calendar ngModel id="txtBirthDate" name="txtBirthDate" dateFormat="dd/mm/yy" placeholder="__/__/____" class="w-6" inputId="calendar" [inputStyle]="{width: '100%'}" [maxDate]="maxDate" required></p-calendar>
+                </div>
+            </div>
+            <hr class="p-divider">
+            <div class="flex justify-content-end gap-2">
+                <button pButton type="button" label="Limpar" (click)="this.form.resetForm()" class="w-1 p-mt-2 border-round-lg" icon="pi pi-refresh" severity="secondary"></button>
+                <button pButton type="button" label="Salvar" (click)="onSave(form)" class="w-1 p-mt-2 border-round-lg" icon="pi pi-save" severity="success"></button>
+            </div>
+        </form>
+    </div>
+</p-card>

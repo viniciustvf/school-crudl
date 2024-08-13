@@ -1,0 +1,29 @@
+<div class="p-datatable p-component p-datatable-responsive mt-2">
+    <p-table 
+      styleClass="p-datatable-striped" 
+      [value]="registrations" 
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [paginator]="true"
+      [rows]="5"
+      >
+      <ng-template pTemplate="header">
+        <tr>
+            <th class="col-name font-bold">Estudante</th>
+            <th class="col-vacancies font-bold">Curso</th>
+            <th class="col-init font-bold">Data de matrícula</th>
+            <th class="col-actions font-bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-registration>
+        <tr>
+          <td>{{ registration.person.name }}</td>
+          <td>{{ registration.course.name }}</td>
+          <td>{{ registration.registrationDate | date:'dd/MM/yyyy' }}</td>
+          <td>
+            <button pButton type="button" [rounded]="true" [outlined]="true" icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="onEdit(registration)"></button>
+            <button pButton type="button" [rounded]="true" [outlined]="true" icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="onDelete(registration.id)"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>

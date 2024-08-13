@@ -1,0 +1,5 @@
+<div class="container">
+    <h1>Pessoa</h1>
+    <app-person-form></app-person-form>
+    <app-person-table (selectEvent)="onSelectPerson($event)" (onDeleteEvent)="onDeleteEvent()"></app-person-table>
+</div>

@@ -1,0 +1,34 @@
+<div class="p-datatable p-component p-datatable-responsive mt-2">
+  <p-table 
+    styleClass="p-datatable-striped" 
+    [value]="courses" 
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [paginator]="true"
+    [rows]="5"
+    >
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="col-name font-bold">Nome</th>
+        <th class="col-name font-bold">Total de vagas</th>
+        <th class="col-name font-bold">Data de Início</th>
+        <th class="col-name font-bold">Data de término</th>
+        <th class="col-name font-bold">Idade mínima</th>
+        <th class="col-actions font-bold">Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-course>
+      <tr>
+        <td class="col-name w-2">{{ course.name }}</td>
+        <td class="col-name w-2">{{ course.totalVacancies }}</td>
+        <td class="col-name w-2">{{ course.init | date:'dd/MM/yyyy' }}</td>
+        <td class="col-name w-2">{{ course.end | date:'dd/MM/yyyy' }}</td>
+        <td class="col-name w-2">{{ course.minimumStudentAge }}</td>
+        <td class="col-actions w-2">
+          <button pButton type="button" [rounded]="true" [outlined]="true" icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="onEdit(course)"></button>
+          <button pButton type="button" [rounded]="true" [outlined]="true" icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="onDelete(course.id)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+  

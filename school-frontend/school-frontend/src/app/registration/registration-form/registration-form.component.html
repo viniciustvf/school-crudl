@@ -1,0 +1,26 @@
+
+<p-card class="mb-2">
+    <div class="container p-fluid">
+        <form #form="ngForm" class="ui-g">
+            <div class="flex justify-content-between gap-2">
+                <div class="w-6 flex flex-column">
+                    <label for="txtPerson" class="p-d-block font-bold">Pessoa</label>
+                    <p-dropdown [options]="persons" optionLabel="name" [(ngModel)]="selectedPerson" id="txtPerson" name="txtPerson" placeholder="Pessoa" required></p-dropdown>
+                </div>
+                <div class="w-6 flex flex-column">
+                    <label for="txtCourse" class="p-d-block font-bold">Curso</label>
+                    <p-dropdown [options]="courses" optionLabel="name" [(ngModel)]="selectedCourse" id="txtCourse" name="txtCourse" placeholder="Cursos" required></p-dropdown>
+                </div>
+                <div class="w-6 flex flex-column">
+                    <label for="txtRegistrationDate" class="p-d-block font-bold">Data da matrícula</label>
+                    <p-calendar ngModel id="txtRegistrationDate" name="txtRegistrationDate" dateFormat="dd/mm/yy" placeholder="__/__/____" inputId="calendar" [inputStyle]="{width: '100%'}" required></p-calendar>
+                </div>
+            </div>
+            <hr class="p-divider">
+            <div class="flex justify-content-end gap-2">
+                <button pButton type="button" label="Limpar" (click)="this.form.resetForm()" class="w-1 p-mt-2 border-round-lg" icon="pi pi-refresh" severity="secondary"></button>
+                <button pButton type="button" label="Salvar" (click)="onSave(form)" class="w-1 p-mt-2 border-round-lg" icon="pi pi-save" severity="success"></button>
+            </div>
+        </form>
+    </div>
+</p-card>
